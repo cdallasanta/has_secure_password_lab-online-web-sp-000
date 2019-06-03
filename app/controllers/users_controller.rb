@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def create
+    binding.pry
     User.create(user_params)
     redirect_to '/'
   end
