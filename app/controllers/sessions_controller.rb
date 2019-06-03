@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if session[:name]
+    if session[:user_id]
       redirect_to '/'
     elsif params[:name].blank?
       redirect_to '/'
     else
-      session[:name] = params[:name]
+      # check password here?
+      session[:user_id] = User.find_by(name: params[:name]).id
       redirect_to '/'
     end
   end
