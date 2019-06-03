@@ -1,5 +1,3 @@
 class User < ApplicationRecord
-  def authenticate
-    
-  end
+  has_secure_password
 end
